@@ -5,8 +5,8 @@ from django.contrib.auth.models import User, auth
 
 # Create your views here.
 
-def course(request):
-    return render(request, 'courses.html')
+# def course(request):
+#     return render(request, 'courses.html')
 
 
 def register(request):
