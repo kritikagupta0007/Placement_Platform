@@ -129,7 +129,11 @@
 							<li>Hello, {{user.first_name}}</li>
 							<li><a href ="accounts/logout">Logout</a> </li>
 							{% else %}
-							<li class="btn-cta"><a href="accounts/login"><span>Login</span></a></li>
+							<li class="has-dropdown"><a href="#"><span>Login</span></a>
+								<ul class="dropdown">
+									<li><a href="accounts/login">Student</a></li>
+									<li><a href="#">TPO</a></li>
+								</ul></li>
 							<li class="btn-cta"><a href="accounts/register"><span>Register</span></a></li>
 							{% endif %}
 						</ul>
