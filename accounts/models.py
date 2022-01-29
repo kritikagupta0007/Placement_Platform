@@ -5,4 +5,4 @@ class Register(models.Model):
     first_name = models.CharField(max_length=50)
     father_name = models.CharField(max_length=50)
     mother_name = models.CharField(max_length=50)
-    aadhar_number = models.IntegerField(max_length=10)
+    aadhar_number = models.IntegerField()

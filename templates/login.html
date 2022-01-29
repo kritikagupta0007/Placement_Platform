@@ -1,91 +1,61 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
+<title>Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(27, 182, 169);
-}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-* {
-  box-sizing: border-box;
-}
+<link href="{% static 'css/register.css' %}" rel="stylesheet" type="text/css" media="all" />
 
-/* Add padding to containers */
-.container {
-  padding: 16px;
-  background-color: white;
-}
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Overwrite default styles of hr */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-/* Set a style for the submit button */
-.registerbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.registerbtn:hover {
-  opacity: 1;
-}
-
-/* Add a blue text color to links */
-a {
-  color: dodgerblue;
-}
-
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
-}
-</style>
 </head>
-<body>
-
-    <form action="login", method="post">
-        {% csrf_token %}
+<body>	
+	<div class="main-w3layouts wrapper">
+		<h1>Login</h1>
+      {% for message in messages%}
+       <h4>{{message}}</h4>
+      {% endfor %}
+		<div class="main-agileinfo">
+			<div class="agileits-top">
         
-        <input type="text" name="username" placeholder="Username"><br>
-        <input type="password" name="password" placeholder="password"><br>
-        <button type="Submit">Submit</button>
+				<form action="#" method="post">
+          {% csrf_token %} 
+					<input class="text" type="email" name="email" placeholder="Email" required=""><br/>
+					<input class="text" type="password" name="password" placeholder="Password" required=""><br/>
 
-    
-        <div>
-            {% for message in messages%}
-             <h4>{{message}}</h4>
-            {% endfor %}
-      
-        </div>
-      
-      </form>
-     
-
+          <div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>I am not a Robot</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+					<input type="submit" value="Login">
+          
+				</form>
+				<p>Don't have an Account? <a href="accounts/register.html"> SignUp Now!</a></p>
+			</div>
+		</div>
+		
+		<ul class="colorlib-bubbles">
+      <li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+	
 </body>
 </html>

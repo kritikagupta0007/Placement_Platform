@@ -16,10 +16,14 @@
 <body>
 	
 	<div class="main-w3layouts wrapper">
-		<h1>SignUp Form</h1>
+		<h1>SignUp</h1>
+			{% for message in messages%}
+			 <h4>{{message}}</h4>
+			{% endfor %}
 		<div class="main-agileinfo">
 			<div class="agileits-top">
 				<form action="#" method="post">
+					{% csrf_token %} 
           <input class="text" type="text" name="University Roll Number" placeholder="University Roll Number" required=""><br/>
           <input class="text" type="text" name="Admission Number" placeholder="Admission Number" required=""><br/>
 					<input class="text" type="text" name="FullName" placeholder="Full Name" required=""><br/>
