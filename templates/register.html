@@ -2,51 +2,59 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>SignUp Form</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<title>SignUp Form</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script
+		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-<link href="{% static 'css/register.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'css/register.css' %}" rel="stylesheet" type="text/css" media="all" />
 
-<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 
 </head>
+
 <body>
-	
+
 	<div class="main-w3layouts wrapper">
 		<h1>SignUp</h1>
-			{% for message in messages%}
-			 <h4>{{message}}</h4>
-			{% endfor %}
+		{% for message in messages%}
+		<h4>{{message}}</h4>
+		{% endfor %}
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="#" method="post">
-					{% csrf_token %} 
-          <input class="text" type="text" name="University Roll Number" placeholder="University Roll Number" required=""><br/>
-          <input class="text" type="text" name="Admission Number" placeholder="Admission Number" required=""><br/>
-					<input class="text" type="text" name="FullName" placeholder="Full Name" required=""><br/>
-					<input class="text" type="text" name="FatherName" placeholder="Father Name" required=""><br/>
-					<input class="text" type="text" name="MotherName" placeholder="Mother Name" required=""><br/>
-					<input class="text" type="text" name="AadharNumber" placeholder="Aadhar Card Number" required=""><br/>
-					<input class="text" type="text" name="dateOfBirth" placeholder="Date Of Birth" required=""><br/>
-					<input class="text" type="text" name="gender" placeholder="Gender" required=""><br/>
+				<form action="register" method="post">
+					{% csrf_token %}
+					<input class="text" type="text" name="university_roll_number" placeholder="University Roll Number"
+						required=""><br />
+					<input class="text" type="text" name="admission_number" placeholder="Admission Number"
+						required=""><br />
+					<input class="text" type="text" name="full_name" placeholder="Full Name" required=""><br />
+					<input class="text" type="text" name="father_name" placeholder="Father Name" required=""><br />
+					<input class="text" type="text" name="mother_name" placeholder="Mother Name" required=""><br />
+					<input class="text" type="text" name="aadhar_number" placeholder="Aadhar Card Number"
+						required=""><br />
+					<input class="text" type="text" name="dateOfBirth" placeholder="Date Of Birth" required=""><br />
+					<input class="text" type="text" name="gender" placeholder="Gender" required=""><br />
 
-          <input class="text" type="text" name="marks1" placeholder="10th Class Percentage" required=""><br/>
-					<input class="text" type="text" name="marks2" placeholder="12th Class Percentage" required=""><br/>
-					<input class="text" type="text" name="marks3" placeholder="B.Tech Percentage" required=""><br/>
-          <input class="text" type="text" name="branch" placeholder="B.Tech Branch" required=""><br/>
+					<input class="text" type="text" name="marks1" placeholder="10th Class Percentage" required=""><br />
+					<input class="text" type="text" name="marks2" placeholder="12th Class Percentage" required=""><br />
+					<input class="text" type="text" name="marks3" placeholder="B.Tech Percentage" required=""><br />
+					<input class="text" type="text" name="branch" placeholder="B.Tech Branch" required=""><br />
 
-          <input class="text" type="text" name="phoneNumber" placeholder="Phone Number" required=""><br/>
-					<input class="text" type="text" name="parentsNumber" placeholder="Parents Phone Number" required=""><br/>
-          <input class="text" type="text" name="uploadResume" placeholder="Upload Resume" required=""><br/>
+					<input class="text" type="text" name="phone_number" placeholder="Phone Number" required=""><br />
+					<input class="text" type="text" name="parents_number" placeholder="Parents Phone Number"
+						required=""><br />
+					<input class="text" type="text" name="upload_resume" placeholder="Upload Resume" required=""><br />
 
-					<input class="text" type="email" name="email" placeholder="Email" required=""><br/>
-					<input class="text" type="password" name="password" placeholder="Password" required=""><br/>
-					<input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="">
+					<input class="text" type="email" name="email" placeholder="Email" required=""><br />
+					<input class="text" type="password" name="password1" placeholder="Password" required=""><br />
+					<input class="text" type="password" name="password2" placeholder="Confirm Password"
+						required="">
 
-          <div class="wthree-text">
+					<div class="wthree-text">
 						<label class="anim">
 							<input type="checkbox" class="checkbox" required="">
 							<span>I Agree To The Terms & Conditions</span>
@@ -58,9 +66,9 @@
 				<p>Don't have an Account? <a href="#"> Login Now!</a></p>
 			</div>
 		</div>
-		
+
 		<ul class="colorlib-bubbles">
-      <li></li>
+			<li></li>
 			<li></li>
 			<li></li>
 			<li></li>
@@ -74,6 +82,7 @@
 		</ul>
 	</div>
 	<!-- //main -->
-	
+
 </body>
+
 </html>
