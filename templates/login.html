@@ -2,32 +2,34 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Login</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<title>Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script
+		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-<link href="{% static 'css/register.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'css/register.css' %}" rel="stylesheet" type="text/css" media="all" />
 
-<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 
 </head>
-<body>	
+
+<body>
 	<div class="main-w3layouts wrapper">
 		<h1>Login</h1>
-      {% for message in messages%}
-       <h4>{{message}}</h4>
-      {% endfor %}
+		{% for message in messages%}
+		<h4>{{message}}</h4>
+		{% endfor %}
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-        
-				<form action="#" method="post">
-          {% csrf_token %} 
-					<input class="text" type="email" name="email" placeholder="Email" required=""><br/>
-					<input class="text" type="password" name="password" placeholder="Password" required=""><br/>
+				<form action="login" method="post">
+					{% csrf_token %}
+					<input class="text" type="email" name="email" placeholder="Email" required=""><br />
+					<input class="text" type="password" name="password" placeholder="Password" required=""><br />
 
-          <div class="wthree-text">
+					<div class="wthree-text">
 						<label class="anim">
 							<input type="checkbox" class="checkbox" required="">
 							<span>I am not a Robot</span>
@@ -35,14 +37,14 @@
 						<div class="clear"> </div>
 					</div>
 					<input type="submit" value="Login">
-          
+
 				</form>
-				<p>Don't have an Account? <a href="accounts/register.html"> SignUp Now!</a></p>
+				<p>Don't have an Account? <a href="register"> SignUp Now!</a></p>
 			</div>
 		</div>
-		
+
 		<ul class="colorlib-bubbles">
-      <li></li>
+			<li></li>
 			<li></li>
 			<li></li>
 			<li></li>
@@ -56,6 +58,7 @@
 		</ul>
 	</div>
 	<!-- //main -->
-	
+
 </body>
+
 </html>

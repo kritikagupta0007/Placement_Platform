@@ -1,7 +1,8 @@
 from django.forms import PasswordInput
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth.models import auth
+from django.contrib.auth.models import User, auth
+from django.contrib.auth import authenticate
 
 from .models import Register
 
@@ -21,6 +22,7 @@ def register(request):
         mother_name = request.POST['mother_name']
         aadhar_number = request.POST['aadhar_number']
         dateOfBirth = request.POST['dateOfBirth']
+        gender = request.POST['gender']
         marks1 = request.POST['marks1']
         marks2 = request.POST['marks2']
         marks3 = request.POST['marks3']
@@ -49,9 +51,13 @@ def register(request):
                 messages.info(request, 'email exist')
                 return redirect('register')
             else:
-                register = Register.objects.auto_created(university_rollnumber =  university_roll_number, admission_number=admission_number,full_name=name, email=email, father_name = father_name, password=psw,mother_name = mother_name, aadhar_number =  aadhar_number, date_Of_Birth = dateOfBirth, class_10th_percentage = marks1,class_12th_percentage = marks2,btech_percentage = marks3,  btech_branch = branch ,phone_number = phone_number,parents_phone_number = parents_number, upload_Resume =  upload_resume)
+                register = Register(university_rollnumber =  university_roll_number, admission_number=admission_number,full_name=name, email=email, father_name = father_name, password=psw,mother_name = mother_name, aadhar_number =  aadhar_number, date_Of_Birth = dateOfBirth, gender=gender, class_10th_percentage = marks1,class_12th_percentage = marks2,btech_percentage = marks3,  btech_branch = branch ,phone_number = phone_number,parents_phone_number = parents_number, upload_Resume =  upload_resume)
+                user = User.objects.create_user(username = name, email=email, password = psw)
                 register.save()
+                user.save()
                 print("user created")
+                print(user.email)
+                print(user.password)
                 return redirect('login')
         else:
             messages.info(request, 'Password not match')
@@ -67,17 +73,15 @@ def login(request):
     if request.method == "POST":
         email = request.POST['email']
         password = request.POST['password']
-
-        register = auth.authenticate(email=email, password=password)
-
-        if register is not None:
-            auth.login(request, register)
+        print(email)
+        print(password)
+        user = auth.authenticate(email=email, password=password)
+        if user is not None:
+            auth.login(request, user)
             return redirect('/') 
-
         else:
             messages.info(request, "Invalid Credentials")
-            return redirect('login')
-        
+            return redirect('/')
     else:
         return render(request, 'login.html')
 
