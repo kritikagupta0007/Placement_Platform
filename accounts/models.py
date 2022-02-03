@@ -2,7 +2,7 @@ import datetime
 from django.db import models
 
 # Create your models here.
-class Register(models.Model):
+class StudentDetails(models.Model):
     university_rollnumber = models.IntegerField(default = 0)
     admission_number = models.CharField(max_length=9, default='', editable=True)
     full_name = models.CharField(max_length=30,default='', editable=True)

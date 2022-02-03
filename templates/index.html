@@ -10,22 +10,6 @@
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="freehtml5.co" />
-
-	<!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-  	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
 	<meta property="og:url" content=""/>
@@ -104,7 +88,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>Educ<span>.</span></a></div>
+						<div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>Clique<span>.</span></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
@@ -113,6 +97,7 @@
 							<li><a href="accounts/course">All Trainings</a></li>
 							<li><a href="teacher.html">All Jobs</a></li>
 							<li><a href="pricing.html">Placement Records</a></li>
+							<li><a href="chat/chat">Chat</a></li>
 
 							<!-- If blog added -->
 							<!-- <li class="has-dropdown">
@@ -124,7 +109,7 @@
 									<li><a href="#">API</a></li>
 								</ul>
 							</li> -->
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="contact.html">Profile</a></li>
 							{% if user.is_authenticated %}
 							<li>Hello, {{user.first_name}}</li>
 							<li><a href ="accounts/logout">Logout</a> </li>
@@ -147,7 +132,7 @@
 	<aside id="fh5co-hero">
 		<div class="flexslider">
 			<ul class="slides">
-		   	<li style="background-image: url(images/img_bg_1.jpg);">
+		   	<li><img src="{% static 'images/.jpg' %}"/></li>
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
@@ -161,7 +146,7 @@
 			   		</div>
 		   		</div>
 		   	</li>
-		   	<li style="background-image: url(static/images/img_bg_2.jpg);">
+		   	<li style="background-image: url(https://images.unsplash.com/photo-1573496799175-606e47a7d4f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzd8fHNvZnR3YXJlJTIwZGV2ZWxvcGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60);">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
@@ -608,17 +593,17 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 animate-box">
 				<div class="date-counter text-center">
-					<h2>Get 400 of Online Courses for Free</h2>
-					<h3>By Mike Smith</h3>
+					<h2>Apply for Adobe as Software Engineering</h2>
+					<!-- <h3></h3> -->
 					<div class="simply-countdown simply-countdown-one"></div>
-					<p><strong>Limited Offer, Hurry Up!</strong></p>
+					<p><strong>Limited time, Hurry Up!</strong></p>
 					<p><a href="#" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div id="fh5co-gallery" class="fh5co-bg-section">
+	<!-- <div id="fh5co-gallery" class="fh5co-bg-section">
 		<div class="row text-center">
 			<h2><span>Instagram Gallery</span></h2>
 		</div>
@@ -636,7 +621,7 @@
 				<a href="#" class="gallery" style="background-image: url(images/project-4.jpg);"></a>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
 		<div class="overlay"></div>
@@ -644,7 +629,7 @@
 			<div class="row row-pb-md">
 				<div class="col-md-3 fh5co-widget">
 					<h3>About Education</h3>
-					<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+					<p>Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, morals, beliefs, habits, and personal development.</p>
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
 					<h3>Learning</h3>
@@ -689,16 +674,6 @@
 					</ul>
 				</div>
 			</div>
-
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> &amp; <a href="https://www.pexels.com/" target="_blank">Pexels</a></small>
-					</p>
-				</div>
-			</div>
-
 		</div>
 	</footer>
 	</div>
