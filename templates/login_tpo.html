@@ -4,7 +4,7 @@
 <html>
 
 <head>
-	<title>Login</title>
+	<title>TPO Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script
@@ -26,13 +26,13 @@
 		{% endfor %}
 	</div>
 	<div class="main-w3layouts wrapper">
-		<h1>Login</h1>
+		<h1>TPO Login</h1>
 
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="login" method="post">
+				<form action="tpologin" method="post">
 					{% csrf_token %}
-					<input class="text" type="text" name="username" placeholder="UserName" required=""><br />
+					<input class="text" type="text" name="username" placeholder="TPO User Id" required=""><br />
 					<input class="text" type="password" name="password" placeholder="Password" required=""><br />
 
 					<div class="wthree-text">
@@ -45,7 +45,7 @@
 					<input type="submit" value="Login">
 
 				</form>
-				<p>Don't have an Account? <a href="register"> SignUp Now!</a></p>
+				<!-- <p>Don't have an Account? <a href="register"> SignUp Now!</a></p> -->
 			</div>
 		</div>
 
