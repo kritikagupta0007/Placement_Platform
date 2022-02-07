@@ -13,6 +13,7 @@
 		content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="freehtml5.co" />
 
+	<link href="/dist/output.css" rel="stylesheet">
 	<!-- 
 	//////////////////////////////////////////////////////
 
@@ -84,7 +85,7 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
-		<nav class="fh5co-nav" role="navigation">
+		<nav class="fh5co-nav" role="navigation" style="overflow:hidden; background-color:rgb(230 230 230);; position:fixed; top:0; width:100%;">
 			<div class="top">
 				<div class="container">
 
@@ -103,7 +104,50 @@
 				</div> -->
 				</div>
 			</div>
-			<div class="top-menu">
+			<!-- <header class="header-of-page bg-color" style="top:0px; box-shadow: rgb(220,220,220) 0px 2px 10px;">
+				<div class="header-content">
+					<a href="/?home=1" class="logo">
+						<i class="iconfont icon_logo"></i>
+						" &nbsp;Clique "
+					</a>
+					<div class="nav-menu">
+						<div class="nav_item">
+							<span>"Home"</span>
+							</div>
+						<div class="nav_item">
+							<span>"About"</span>
+						</div>
+						{% if user.is_authenticated %}
+						<div class="nav_item">
+							<span>"Courses"</span>
+						</div>
+						<div class="nav_item">
+							<span>"All Trainings"</span>
+						</div>
+						<div class="nav_item">
+							<span>"Placement Records"</span>
+						</div>
+						<li>Hello, {{user.first_name}}</li>
+						<div class="nav_item">
+							<span>"Logout"</span>
+						</div>
+						{% else %}
+						<div class="nav_item">
+							<span>
+								"Login"
+								<i class="iconfont icon_broad_back">
+								</i>
+							</span>
+							<div class="nav-menu-drop" style="display: none;"></div>
+						</div>
+						<div class="nav_item">
+							<span>"Register"</span>
+						</div>
+						{% endif %} -->
+
+
+
+	       <div class="top-menu">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-2">
@@ -114,10 +158,7 @@
 							<ul>
 								<li class="active"><a href="index.html">Home</a></li>
 								<li><a href="about.html">About</a></li>
-								<li><a href="accounts/course">All Trainings</a></li>
-								<li><a href="teacher.html">All Jobs</a></li>
-								<li><a href="pricing.html">Placement Records</a></li>
-
+						
 								<!-- If blog added -->
 								<!-- <li class="has-dropdown">
 								<a href="blog.html">Blog</a>
@@ -127,9 +168,13 @@
 									<li><a href="#">Branding</a></li>
 									<li><a href="#">API</a></li>
 								</ul>
-							</li> -->
-								<li><a href="contact.html">Contact</a></li>
+								</li> -->
+
 								{% if user.is_authenticated %}
+								<li><a href="contact.html">Courses</a></li>
+								<li><a href="accounts/course">All Trainings</a></li>
+								<li><a href="teacher.html">All Jobs</a></li>
+								<li><a href="pricing.html">Placement Records</a></li>
 								<li>Hello, {{user.first_name}}</li>
 								<li><a href="accounts/logout">Logout</a> </li>
 								{% else %}
@@ -226,9 +271,15 @@
 					</div>
 					<div class="col-md-3 col-sm-6 text-center animate-box">
 						<div class="services">
-							<a href="https://www.youtube.com/"><span  class="icon">
-								<i class="icon-arrow-up"></i>
-							</span></a>
+							{% if user.is_authenticated %}
+							<a href="https://www.youtube.com/"><span class="icon">
+									<i class="icon-arrow-up"></i>
+								</span></a>
+							{% else %}
+							<a href="accounts/login"><span class="icon">
+									<i class="icon-arrow-up"></i>
+								</span></a>
+							{% endif %}
 							<div class="desc">
 								<h3><a href="https://www.youtube.com/">DBMS</a></h3>
 								<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
@@ -238,9 +289,9 @@
 					</div>
 					<div class="col-md-3 col-sm-6 text-center animate-box">
 						<div class="services">
-						<a href="https://www.youtube.com/">	<span class="icon">
-								<i class="icon-bulb"></i>
-							</span></a>
+							<a href="https://www.youtube.com/"> <span class="icon">
+									<i class="icon-bulb"></i>
+								</span></a>
 							<div class="desc">
 								<h3><a href="#">Machine Lerning</a></h3>
 								<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
@@ -312,7 +363,7 @@
 			</div>
 		</div>
 
-		<div id="fh5co-counter" class="fh5co-counters" style="background-image: url(images/img_bg_4.jpg);"
+		<div id="fh5co-counter" class="fh5co-counters" style="background-color: rgb(89, 153, 192)" ;
 			data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">
@@ -323,25 +374,25 @@
 								<span class="icon"><i class="icon-world"></i></span>
 								<span class="fh5co-counter js-counter" data-from="0" data-to="3297" data-speed="5000"
 									data-refresh-interval="50"></span>
-								<span class="fh5co-counter-label">Foreign Followers</span>
+								<span class="fh5co-counter-label">Student Registered</span>
 							</div>
 							<div class="col-md-3 col-sm-6 text-center animate-box">
 								<span class="icon"><i class="icon-study"></i></span>
 								<span class="fh5co-counter js-counter" data-from="0" data-to="3700" data-speed="5000"
 									data-refresh-interval="50"></span>
-								<span class="fh5co-counter-label">Students Enrolled</span>
+								<span class="fh5co-counter-label">Placed Students</span>
 							</div>
 							<div class="col-md-3 col-sm-6 text-center animate-box">
 								<span class="icon"><i class="icon-bulb"></i></span>
 								<span class="fh5co-counter js-counter" data-from="0" data-to="5034" data-speed="5000"
 									data-refresh-interval="50"></span>
-								<span class="fh5co-counter-label">Classes Complete</span>
+								<span class="fh5co-counter-label">Courses</span>
 							</div>
 							<div class="col-md-3 col-sm-6 text-center animate-box">
 								<span class="icon"><i class="icon-head"></i></span>
 								<span class="fh5co-counter js-counter" data-from="0" data-to="1080" data-speed="5000"
 									data-refresh-interval="50"></span>
-								<span class="fh5co-counter-label">Certified Teachers</span>
+								<span class="fh5co-counter-label">Companies</span>
 							</div>
 						</div>
 					</div>
@@ -349,7 +400,8 @@
 			</div>
 		</div>
 
-		<div id="fh5co-course">
+		{% comment %}
+		<!-- <div id="fh5co-course">
 			<div class="container">
 				<div class="row animate-box">
 					<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
@@ -414,9 +466,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --> {% endcomment %}
 
-		<div id="fh5co-testimonial" style="background-image: url(images/school.jpg);">
+		<div id="fh5co-testimonial" style="background-color : rgb(99, 137, 175)">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row animate-box">
@@ -573,7 +625,7 @@
 			</div>
 		</div>
 
-		<div id="fh5co-register" style="background-image: url(images/img_bg_2.jpg);">
+		<div id="fh5co-register" style="background-color: rgb(103, 241, 188);">
 			<div class="overlay"></div>
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 animate-box">
@@ -590,7 +642,7 @@
 
 
 
-		<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
+		<footer id="fh5co-footer" role="contentinfo" style="background-color: rgb(187, 224, 226)" ;>
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row row-pb-md">

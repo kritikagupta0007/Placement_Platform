@@ -95,3 +95,20 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+
+def tpologin(request):
+    if request.method == "POST":
+        u = request.POST['username']
+        p = request.POST['password']
+
+        if u == 'tpoadmin' and p == 'Tpo@1234':
+            return redirect('/')
+        
+        else:
+            messages.info(request, "Invalid Credentials")
+            return redirect('tpologin')
+    
+    else:
+        return render(request, 'login.html')
+

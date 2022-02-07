@@ -120,7 +120,7 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 .fh5co-nav .top .num {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgb(255, 255, 255);
   font-size: 13px;
   letter-spacing: 0px;
   border-left: 1px solid rgba(0, 0, 0, 0.08);
@@ -1637,5 +1637,13 @@ h1, h2, h3, h4, h5, h6, figure {
 .js .animate-box {
   opacity: 0;
 }
+
+/* .navbar-fixed-top{
+  background-color:rgb(255, 255, 255);
+  transition: background-color 200ms linear;
+} */
+
+/* .nav-colored { background-color:#000; }
+.nav-transparent { background-color:transparent;} */
 
 /*# sourceMappingURL=style.css.map */
