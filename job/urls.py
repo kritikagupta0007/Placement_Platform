@@ -5,4 +5,6 @@ from . import views
 urlpatterns = [
     path('tporole', views.tporole, name='tporole'),
     path('addjob', views.addjob, name='addjob'),
+    path('viewjob', views.viewjob, name='viewjob'),
+
 ]

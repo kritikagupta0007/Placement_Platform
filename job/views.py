@@ -22,3 +22,13 @@ def addjob(request):
 
     else:
         return render(request, 'addjob.html')
+
+
+def viewjob(request):
+    addjob = JobForm.objects.all()
+    print(addjob)
+    data = {
+        'addjob' : addjob
+    }
+
+    return render(request, 'job.html', data)

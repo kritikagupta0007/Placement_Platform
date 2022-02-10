@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job</title>
+</head>
+<body>
+    <h1>All Jobs</h1>
+    <div>
+        {% for n in addjob %}
+        <div>
+            <h2>Company name : {{n.company}}</h2>
+            <h4>Profile : {{n.profile}}</h4>
+            <h4>Package : {{n.package}}</h4>
+            <h4>eligibility : {{n.eligibility}}</h4>
+            <p><h4>Drive date : {{n.drive_date}} &nbsp;&nbsp; Last Date : {{n.last_date}}</h4></p>
+            <h4>Status : {{n.status}}</h4>
+
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
