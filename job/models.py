@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 
 # Create your models here.
@@ -10,3 +11,9 @@ class JobForm(models.Model):
     drive_date = models.CharField(max_length=15, default='', editable=True)
     last_date = models.CharField(max_length=15, default='', editable=True)
     status = models.CharField(max_length=15, default='', editable=True)
+
+
+class PlacementDetail(models.Model):
+    title = models.CharField(max_length=50, default='', editable=True)
+    description = models.CharField(max_length=500, default='', editable=True)
+    upload_file = models.FileField(upload_to=None, default= '',max_length=254)

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import HttpResponse
-from job.models import JobForm
+from job.models import JobForm, PlacementDetail
 
 # Create your views here.
 
@@ -32,3 +32,27 @@ def viewjob(request):
     }
 
     return render(request, 'job.html', data)
+
+
+
+def adddetails(request):
+    if request.method == 'POST':
+        title = request.POST.get("title")
+        desc = request.POST.get("desc")
+        upload = request.POST.get("upload_resume")
+        add = PlacementDetail(title=title, description=desc, upload_file=upload )
+        add.save()
+        return redirect("tporole")
+    
+    else:
+        return render(request, 'add_details.html')
+
+
+def placementdetails(request):
+    placement = PlacementDetail.objects.all()
+    print(placement)
+    data = {
+        'placement' : placement
+    }
+
+    return render(request, 'placement_details.html', data)
