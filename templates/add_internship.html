@@ -4,7 +4,7 @@
 <html>
 
 <head>
-	<title>Add Job</title>
+	<title>Add Traning</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script
@@ -18,19 +18,19 @@
 
 <body>
 	<div class="main-w3layouts wrapper">
-		<h1>Add Company Details</h1>
+		<h1>Add Traning Details</h1>
 		{% for message in messages%}
 		<h4>{{message}}</h4>
 		{% endfor %}
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="addjob" method="post">
+				<form action="addinternship" method="post">
 					{% csrf_token %}
 					<input class="text" type="text" name="companyname" placeholder="Company name" required=""><br />
 					<input class="text" type="text" name="profile" placeholder="Job Profile" required=""><br />
-                    <input class="text" type="text" name="package" placeholder="Package" required=""><br />
-					<input class="text" type="text" name="eligible" placeholder="Eligibility Criteria" required=""><br />
-					<input class="text" type="text" name="date" placeholder="Drive Date" required=""><br />
+                    <input class="text" type="text" name="skills" placeholder="Skills " required=""><br />
+                    <input class="text" type="text" name="stipend" placeholder="Stipend" required=""><br />
+					<input class="text" type="text" name="duration" placeholder="Duration" required=""><br />
                     <input class="text" type="text" name="lastDate" placeholder="Last Date to Apply" required=""><br />
 					<input class="text" type="text" name="link" placeholder="Apply Link" required=""><br />
 

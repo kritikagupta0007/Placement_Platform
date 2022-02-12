@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import HttpResponse
-from job.models import JobForm, PlacementDetail
+from job.models import JobForm, PlacementDetail, InternshipForm
 
 # Create your views here.
 
@@ -56,3 +56,29 @@ def placementdetails(request):
     }
 
     return render(request, 'placement_details.html', data)
+
+
+def addinternship(request):
+    if request.method == 'POST':
+        cname = request.POST.get("companyname")
+        profile = request.POST.get("profile")
+        skills = request.POST.get("skills")
+        stipend = request.POST.get("stipend")
+        duration = request.POST.get("duration")
+        last_date = request.POST.get("lastDate")
+        link = request.POST.get("link")
+        add = InternshipForm(company=cname, profile=profile, skills=skills, stipend=stipend, duration=duration, last_date=last_date, link_to_apply=link)
+        add.save()
+        return redirect("tporole")
+
+    else:
+        return render(request, 'add_internship.html')
+
+def internshipdetails(request):
+    internship = InternshipForm.objects.all()
+    print(internship)
+    data = {
+        'internship' : internship
+    }
+
+    return render(request, 'internship_details.html', data)

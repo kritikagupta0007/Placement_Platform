@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #5858ce;
+        
+        }
+        .column {
+            float: left;
+            width: 33.33%;
+          }
+
+        .container {
+            padding: 10px 14px 0px 50px;
+          }
+
+
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 5px;
+        }
+
+        .flip-card-front {
+            background-color: rgb(174, 184, 174);
+            color: black;
+            text-align: center;
+        }
+
+        .flip-card-back {
+            background-color: #dbd827;
+            color: rgb(0, 0, 0);
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body >
+    <h1 style="text-align: center; color: rgb(255, 255, 255);">All Jobs</h1>
+    <div>
+        {% for n in internship %}
+        <div class="column">
+        <div class="container">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <p><h2>Company name : {{n.company}}</h2></p>
+                </div>
+                <div class="flip-card-back">
+                    <h4>Profile : {{n.profile}}</h4>
+                    <p>Package : {{n.package}}</p>
+                        <p>Skills : {{n.skills}}</p>
+                        <p>Stipend : {{n.stipend}}</p>
+                            <p>Duration : {{n.duration}}</p>
+                                <p>Last Date : {{n.last_date}}</p>
+                    <button><a href="{{n.link_to_apply}}">Apply</a></button>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
