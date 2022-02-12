@@ -15,8 +15,8 @@ def addjob(request):
         eligible = request.POST.get("eligible")
         drive_date = request.POST.get("date")
         last_date = request.POST.get("lastDate")
-        status = request.POST.get("status")
-        add = JobForm(company=cname, profile=profile, package=package, eligibility=eligible, drive_date=drive_date, last_date=last_date, status=status)
+        link = request.POST.get("link")
+        add = JobForm(company=cname, profile=profile, package=package, eligibility=eligible, drive_date=drive_date, last_date=last_date, link_to_apply=link)
         add.save()
         return redirect("tporole")
 

@@ -10,7 +10,7 @@ class JobForm(models.Model):
     eligibility = models.CharField(max_length=100, default='', editable=True)
     drive_date = models.CharField(max_length=15, default='', editable=True)
     last_date = models.CharField(max_length=15, default='', editable=True)
-    status = models.CharField(max_length=15, default='', editable=True)
+    link_to_apply = models.URLField(max_length = 200, default='', editable=True)
 
 
 class PlacementDetail(models.Model):
