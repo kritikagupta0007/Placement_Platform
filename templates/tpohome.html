@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Placement Platform</title>
+	<title>TPO Home</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords"
@@ -71,7 +71,7 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
-		<nav class="fh5co-nav" role="navigation" style="overflow:hidden; background-color:rgb(230 230 230); position:fixed; top:0; width:100%;">
+		<nav class="fh5co-nav" role="navigation" style="overflow:hidden; background-color:rgb(230 230 230);; position:fixed; top:0; width:100%;">
 			<div class="top">
 				<div class="container">
 
@@ -142,7 +142,7 @@
 						</div>
 						<div class="col-xs-10 text-right menu-1">
 							<ul>
-								<li class="active"><a href="index">Home</a></li>
+								<li class="active"><a href="tpohome">Home</a></li>
 								<!-- If blog added -->
 								<!-- <li class="has-dropdown">
 								<a href="blog.html">Blog</a>
@@ -155,12 +155,17 @@
 								</li> -->
 
 								{% if user.is_authenticated %}
+								<li><a href="tporole">TPO Activity</a></li>
 								<li><a href="job/internshipdetails">Internships</a></li>
 								<li><a href="job/viewjob">Jobs</a></li>
 								<li><a href="job/placementdetails">Placement Records</a></li>
 								<li>Hello, {{user.first_name}}</li>
 								<li><a href="accounts/logout">Logout</a> </li>
 								{% else %}
+								<!-- <li><a href="job/tporole">TPO Activity</a></li>
+								<li><a href="job/viewjob">All Jobs</a></li>
+								<li><a href="job/placementdetails">All Placement</a></li> -->
+
 								<li ><a href="accounts/entities"><span>Login</span></a>
 									
 								</li>
@@ -380,7 +385,7 @@
 		</div>
 
 
-		<div id="fh5co-testimonial">
+		<div id="fh5co-testimonial" style="background-color : rgb(99, 137, 175)">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row animate-box">
@@ -537,7 +542,7 @@
 			</div>
 		</div>-->
 
-		<div id="fh5co-register" style="background-color: rgb(89, 153, 192);">
+		<div id="fh5co-register" style="background-color: rgb(103, 147, 241);">
 			<div class="overlay"></div>
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 animate-box">

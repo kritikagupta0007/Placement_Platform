@@ -1,0 +1,260 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+    <meta name="keywords"
+      content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="freehtml5.co" />
+  
+    <link href="/dist/output.css" rel="stylesheet">
+    
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+  
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+ 
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+  
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pricing.css' %}">
+  
+  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  
+   
+    <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+    
+  
+    <script src="{% static 'js/script.js' %}"></script>
+
+  </head>
+
+  <style type="text/css">
+
+
+    *{
+     margin: 0px;
+     padding: 0px;
+    }
+    body{
+     font-family: arial;
+     position: relative;
+    }
+    .main{
+    
+     margin: 10%;
+     margin-left: 600px;
+     
+    }
+    
+    .card{
+         width: 20%;
+         display: inline-block;
+         box-shadow: 1px 1px 10px black;
+         border-radius: 8px; 
+         margin: 6%;
+         margin-left: auto;
+        }
+    
+    .image img{
+      width: 100%;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      
+    
+     
+     }
+    
+    .title{
+     
+      text-align: center;
+      padding: 10px;
+      
+     }
+    
+    h1{
+      font-size: 20px;
+     }
+    
+    .des{
+      padding: 3px;
+      text-align: center;
+     
+      padding-top: 10px;
+            border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    button{
+      margin-top: 40px;
+      margin-bottom: 10px;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding:10px;
+    }
+    button:hover{
+      background-color: black;
+      color: white;
+      transition: .5s;
+      cursor: pointer;
+    }
+    
+    </style>
+<body>
+  <nav class="fh5co-nav" role="navigation" style="overflow:hidden; background-color:rgb(230 230 230);; position:fixed; top:0; width:100%;">
+    <div class="top">
+      <div class="container">
+      </div></div>
+       <div class="top-menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2">
+            <div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>Educ<span>.</span></a>
+            </div>
+          </div>
+          <div class="col-xs-10 text-right menu-1">
+            <ul>
+              <li ><a href="index.html">Home</a></li>
+              {% if user.is_authenticated %}
+              <li><a href="job/internshipdetails">Internships</a></li>
+              <li><a href="job/viewjob">Jobs</a></li>
+              <li><a href="job/placementdetails">Placement Records</a></li>
+              <li>Hello, {{user.first_name}}</li>
+              <li><a href="accounts/logout">Logout</a> </li>
+              {% else %}
+              <li  class="active"><a href="entities"><span>Login</span></a>
+              </li>
+              <li class="btn-cta"><a href="register"><span>Register</span></a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="main">
+
+    <!--cards -->
+   
+   <div class="card">
+   
+   <div class="image">
+      <img src="https://cdn-icons.flaticon.com/png/128/2940/premium/2940653.png?token=exp=1644745183~hmac=c00199da11403e9c418b95895c26a834">
+   </div>
+   <div class="des">
+     <a href="login"><button>Student</button></a>
+   
+   </div>
+   </div>
+   <!--cards -->
+   
+   
+   <div class="card">
+   
+   <div class="image">
+      <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png">
+   </div>
+   <div class="des">
+    <a href="tpologin"><button>TPO</button></a>
+   
+   </div>
+   </div>
+<!--cards -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- <!Doctype html>
+<html>
+<style>
+
+div {
+    height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+}
+
+h1 {
+    text-align:center;
+   padding-top: 100px;
+   margin-left: -20px;
+
+
+}
+
+.btn-group button {
+  align-content: center;
+  background-color: #04AA6D; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  align-content: center;
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  align-content: center;
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  align-content: center;
+  background-color: #3e8e41;
+}
+</style>
+<body>
+
+<h1>Choose Entity</h1>
+
+<div class="btn-group">
+  <a href="login">
+  <button>Student</button>
+</a> 
+<a href="tpologin">
+  <button>TPO</button>
+</a>
+</div>
+
+</body>
+</html> -->

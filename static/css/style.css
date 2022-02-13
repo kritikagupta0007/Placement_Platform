@@ -706,7 +706,7 @@ h1, h2, h3, h4, h5, h6, figure {
   left: 0;
   right: 0;
   content: '';
-  background: rgba(31, 95, 139, 0.7);
+  background: rgba(230,230,230);
 }
 #fh5co-testimonial .testimony-slide {
   text-align: center;

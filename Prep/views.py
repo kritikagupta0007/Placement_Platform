@@ -4,3 +4,6 @@ from django.http import HttpResponse
 
 def index(request):
     return render(request, 'index.html')
+
+def tpohome(request):
+    return render(request, 'tpohome.html')

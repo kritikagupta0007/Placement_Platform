@@ -1,11 +1,15 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import HttpResponse
 from job.models import JobForm, PlacementDetail, InternshipForm
+from django.contrib.auth.models import auth
 
 # Create your views here.
 
 def tporole(request):
     return render(request, 'tporole.html')
+
+def tpohome(request):
+    return render(request, 'tpohome.html')
 
 def addjob(request):
     if request.method == 'POST':
@@ -82,3 +86,8 @@ def internshipdetails(request):
     }
 
     return render(request, 'internship_details.html', data)
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')

@@ -18,7 +18,7 @@ $brand-gray: #ccc;
 $brand-lighter: #e9e9e9;
 $brand-body-color: #e8e8e8;
 $brand-selection-color: #f9f6f0;
-$brand-overlay-color: #4c4a8a;
+$brand-overlay-color: rgb(230,230,230);
 $brand-bg-color: $brand-white;
 
 $input-border-focus:  $brand-primary !default;
@@ -168,7 +168,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 ::selection {
   color: $brand-white;
-  background: $brand-primary;
+  background: rgb(230,230,230);
 }
 
 .fh5co-nav {
@@ -767,7 +767,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-testimonial {
-	background: #1F5F8B;
+	background: rgb(230,230,230);
 	position: relative;
 	.overlay{
 		position: absolute;
@@ -776,7 +776,7 @@ h1, h2, h3, h4, h5, h6, figure {
 		left: 0;
 		right: 0;
 		content: '';
-		background: rgba(#1F5F8B,.7);
+		background: rgb(230,230,230);
 	}
 	.testimony-slide{
 		text-align: center;

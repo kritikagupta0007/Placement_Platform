@@ -9,6 +9,9 @@ from django.contrib.auth import authenticate
 def course(request):
     return render(request, 'courses.html')
 
+def entities(request):
+    return render(request,'entities.html')
+
 
 def register(request):
 
@@ -102,13 +105,19 @@ def tpologin(request):
         u = request.POST['username']
         p = request.POST['password']
 
-        if u == 'tpoadmin' and p == 'Tpo@1234':
-            return redirect('/')
+        user = auth.authenticate(username=u, password=p)
+
+        if user is not None:
+            if user.is_active:
+                auth.login(request, user)
+                return redirect('tpohome') 
         
         else:
             messages.info(request, "Invalid Credentials")
             return redirect('tpologin')
     
     else:
-        return render(request, 'login.html')
+        return render(request, 'tpologin.html')
+
+
 
