@@ -9,6 +9,9 @@ from django.contrib.auth import authenticate
 def course(request):
     return render(request, 'courses.html')
 
+def entities(request):
+    return render(request,'entities.html')
+
 
 def register(request):
 

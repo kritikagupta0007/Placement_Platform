@@ -1,0 +1,396 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Education &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+    <meta name="keywords"
+      content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="freehtml5.co" />
+  
+    <link href="/dist/output.css" rel="stylesheet">
+    
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+  
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+ 
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+  
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pricing.css' %}">
+  
+  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  
+   
+    <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+    
+  
+    <script src="{% static 'js/script.js' %}"></script>
+
+  </head>
+
+<style type="text/css">
+
+
+*{
+ margin: 0px;
+ padding: 0px;
+}
+body{
+ font-family: arial;
+ 
+}
+.main{
+
+ margin: 10%;
+ margin-left: 500px;
+ margin-right: -20px;
+}
+
+.cards{
+     width: 20%;
+     display: inline-block;
+     box-shadow: 2px 2px 20px black;
+     border-radius: 5px; 
+     margin: 2%;
+    }
+
+.image img{
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  
+
+ 
+ }
+
+.title{
+ 
+  text-align: center;
+  padding: 10px;
+  
+ }
+
+h1{
+  font-size: 20px;
+ }
+
+.des{
+  padding: 3px;
+  text-align: center;
+ 
+  padding-top: 10px;
+        border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+button{
+  margin-top: 40px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding:10px;
+}
+button:hover{
+  background-color: black;
+  color: white;
+  transition: .5s;
+  cursor: pointer;
+}
+
+</style>
+<body>
+  <nav class="fh5co-nav" role="navigation" style="overflow:hidden; background-color:rgb(230 230 230);; position:fixed; top:0; width:100%;">
+    <div class="top">
+      <div class="container">
+
+        <!-- removing top bar -->
+        <!-- <div class="row">
+        <div class="col-xs-12 text-right">
+          <p class="site">www.yourdomainname.com</p>
+          <p class="num">Call: +01 123 456 7890</p>
+          <ul class="fh5co-social">
+            <li><a href="#"><i class="icon-facebook2"></i></a></li>
+            <li><a href="#"><i class="icon-twitter2"></i></a></li>
+            <li><a href="#"><i class="icon-dribbble2"></i></a></li>
+            <li><a href="#"><i class="icon-github"></i></a></li>
+          </ul>
+        </div>
+      </div> -->
+      </div>
+    </div>
+    <!-- <header class="header-of-page bg-color" style="top:0px; box-shadow: rgb(220,220,220) 0px 2px 10px;">
+      <div class="header-content">
+        <a href="/?home=1" class="logo">
+          <i class="iconfont icon_logo"></i>
+          " &nbsp;Clique "
+        </a>
+        <div class="nav-menu">
+          <div class="nav_item">
+            <span>"Home"</span>
+            </div>
+          <div class="nav_item">
+            <span>"About"</span>
+          </div>
+          {% if user.is_authenticated %}
+          <div class="nav_item">
+            <span>"Courses"</span>
+          </div>
+          <div class="nav_item">
+            <span>"All Trainings"</span>
+          </div>
+          <div class="nav_item">
+            <span>"Placement Records"</span>
+          </div>
+          <li>Hello, {{user.first_name}}</li>
+          <div class="nav_item">
+            <span>"Logout"</span>
+          </div>
+          {% else %}
+          <div class="nav_item">
+            <span>
+              "Login"
+              <i class="iconfont icon_broad_back">
+              </i>
+            </span>
+            <div class="nav-menu-drop" style="display: none;"></div>
+          </div>
+          <div class="nav_item">
+            <span>"Register"</span>
+          </div>
+          {% endif %} -->
+
+
+
+       <div class="top-menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2">
+            <div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>Educ<span>.</span></a>
+            </div>
+          </div>
+          <div class="col-xs-10 text-right menu-1">
+            <ul>
+              <li class="active"><a href="index.html">Home</a></li>
+              <!-- If blog added -->
+              <!-- <li class="has-dropdown">
+              <a href="blog.html">Blog</a>
+              <ul class="dropdown">
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">eCommerce</a></li>
+                <li><a href="#">Branding</a></li>
+                <li><a href="#">API</a></li>
+              </ul>
+              </li> -->
+
+              {% if user.is_authenticated %}
+              <li><a href="contact.html">Courses</a></li>
+              <li><a href="job/tporole">All Trainings</a></li>
+              <li><a href="job/viewjob">All Jobs</a></li>
+              <li><a href="job/placementdetails">Placement Records</a></li>
+              <li>Hello, {{user.first_name}}</li>
+              <li><a href="accounts/logout">Logout</a> </li>
+              {% else %}
+              <li><a href="job/tporole">TPO Activity</a></li>
+              <li><a href="job/viewjob">All Jobs</a></li>
+              <li><a href="job/placementdetails">All Placement</a></li>
+
+              <li><a href="accounts/entities"><span>Login</span></a>
+                <!-- <ul class="dropdown">
+                  <li><a href="accounts/login">Student</a></li>
+                  <li><a href="#">TPO</a></li>
+                </ul> -->
+              </li>
+              <li class="btn-cta"><a href="accounts/register"><span>Register</span></a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+<div class="main">
+
+ <!--cards -->
+
+<div class="cards">
+
+<div class="image">
+   <img src="https://cdn-icons.flaticon.com/png/128/2940/premium/2940653.png?token=exp=1644745183~hmac=c00199da11403e9c418b95895c26a834">
+</div>
+<div class="des">
+<button>Student</button>
+</div>
+</div>
+<!--cards -->
+
+
+<div class="cards">
+
+<div class="image">
+   <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png">
+</div>
+<div class="des">
+<button>TPO</button>
+</div>
+</div>
+<!--cards -->
+
+<footer id="fh5co-footer" role="contentinfo" style="background-color: rgb(165, 168, 202)" ;>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row row-pb-md">
+      <div class="col-md-3 fh5co-widget">
+        <h3>About Education</h3>
+        <p>Education is the process of facilitating learning, or the acquisition of knowledge, skills,
+          values, morals, beliefs, habits, and personal development</p>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+        <h3>Learning</h3>
+        <ul class="fh5co-footer-links">
+          <li><a href="#">Course</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Meetups</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+        <h3>Learn &amp; Grow</h3>
+        <ul class="fh5co-footer-links">
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Handbook</a></li>
+          <li><a href="#">Held Desk</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+        <h3>Engage us</h3>
+        <ul class="fh5co-footer-links">
+          <li><a href="#">Marketing</a></li>
+          <li><a href="#">Visual Assistant</a></li>
+          <li><a href="#">System Analysis</a></li>
+          <li><a href="#">Advertise</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+        <h3>Legal</h3>
+        <ul class="fh5co-footer-links">
+          <li><a href="#">Find Designers</a></li>
+          <li><a href="#">Find Developers</a></li>
+          <li><a href="#">Teams</a></li>
+          <li><a href="#">Advertise</a></li>
+          <li><a href="#">API</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row copyright">
+    </div>
+
+  </div>
+</footer>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- <!Doctype html>
+<html>
+<style>
+
+div {
+    height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+}
+
+h1 {
+    text-align:center;
+   padding-top: 100px;
+   margin-left: -20px;
+
+
+}
+
+.btn-group button {
+  align-content: center;
+  background-color: #04AA6D; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  align-content: center;
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  align-content: center;
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  align-content: center;
+  background-color: #3e8e41;
+}
+</style>
+<body>
+
+<h1>Choose Entity</h1>
+
+<div class="btn-group">
+  <a href="login">
+  <button>Student</button>
+</a> 
+<a href="tpologin">
+  <button>TPO</button>
+</a>
+</div>
+
+</body>
+</html> -->
