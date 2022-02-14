@@ -18,7 +18,7 @@ $brand-gray: #ccc;
 $brand-lighter: #e9e9e9;
 $brand-body-color: #e8e8e8;
 $brand-selection-color: #f9f6f0;
-$brand-overlay-color: rgb(230,230,230);
+$brand-overlay-color:rgb(25 25 30);
 $brand-bg-color: $brand-white;
 
 $input-border-focus:  $brand-primary !default;
@@ -776,7 +776,7 @@ h1, h2, h3, h4, h5, h6, figure {
 		left: 0;
 		right: 0;
 		content: '';
-		background: rgb(230,230,230);
+		background: rgb(25 25 30);
 	}
 	.testimony-slide{
 		text-align: center;
