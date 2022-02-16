@@ -1,5 +1,7 @@
 from distutils.command.upload import upload
 from django.db import models
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 
@@ -27,3 +29,9 @@ class InternshipForm(models.Model):
     duration = models.CharField(max_length=15, default='', editable=True)
     last_date = models.CharField(max_length=15, default='', editable=True)
     link_to_apply = models.URLField(max_length = 200, default='', editable=True)
+    
+
+class Applied(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    job_id = models.ForeignKey(JobForm, on_delete=models.CASCADE)
+    resume = models.FileField(upload_to=None, default='' ,max_length=254)

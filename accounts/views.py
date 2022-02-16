@@ -12,6 +12,9 @@ def course(request):
 def entities(request):
     return render(request,'entities.html')
 
+def description(request):
+    return render(request,'description.html')
+
 
 def register(request):
 
@@ -118,6 +121,3 @@ def tpologin(request):
     
     else:
         return render(request, 'tpologin.html')
-
-
-

@@ -10,5 +10,6 @@ urlpatterns = [
     path('tpologin',views.tpologin,name='tpologin'),
     path('entities',views.entities,name='entities'),
     path('job/', include('job.urls')),
+    path('description',views.description,name='description')
     
 ]

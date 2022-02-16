@@ -69,15 +69,15 @@
     <title>Job</title>
     <style>
         body {
-            background-color: #0a0a7e;
+            background-color: #ffffff;
         }
         .column {
             float: left;
             width: 33.33%;
           }
 
-        .container {
-            padding: 10px 14px 0px 50px;
+        .container1 {
+            padding:2px 0px 40px 70px;
           }
 
 
@@ -95,7 +95,7 @@
             text-align: center;
             transition: transform 0.6s;
             transform-style: preserve-3d;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
         }
 
         .flip-card:hover .flip-card-inner {
@@ -114,13 +114,13 @@
         }
 
         .flip-card-front {
-            background-color: rgb(110, 235, 224);
+            background-color: rgb(7, 185, 255);
             color: black;
             text-align: center;
         }
 
         .flip-card-back {
-            background-color: #dbd827;
+            background-color: #fffb0d;
             color: rgb(0, 0, 0);
             transform: rotateY(180deg);
         }
@@ -208,12 +208,12 @@
         </div>
     </nav>
 
-    <div style="margin-top: 150px;">
-                <h1 style="text-align: center; color: rgb(255, 255, 255);">Internships</h1>
+    <div style="margin-top: 130px;">
+                <!-- <h1 style="text-align: center; color: rgb(255, 255, 255);">Internships</h1> -->
             <div>
                 {% for n in internship %}
                 <div class="column">
-                    <div class="container">
+                    <div class="container1">
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
@@ -221,11 +221,11 @@
                                 </div>
                                 <div class="flip-card-back">
                                     <h4>Profile : {{n.profile}}</h4>
-                                    <p>Package : {{n.package}}</p>
-                                        <p>Skills : {{n.skills}}</p>
-                                        <p>Stipend : {{n.stipend}}</p>
-                                            <p>Duration : {{n.duration}}</p>
-                                                <p>Last Date : {{n.last_date}}</p>
+                                    <p>Package : {{n.package}}<br>
+                                        Skills : {{n.skills}}<br>
+                                        Stipend : {{n.stipend}}<br>
+                                            Duration : {{n.duration}}<br>
+                                                Last Date : {{n.last_date}}</p>
                                     <button><a href="{{n.link_to_apply}}">Apply</a></button>
                                 </div>
                             </div>

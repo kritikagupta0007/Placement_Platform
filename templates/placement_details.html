@@ -1,172 +1,266 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-   
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Placement Records</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-    <meta name="keywords"
-      content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-    <meta name="author" content="freehtml5.co" />
-  
-    <link href="/dist/output.css" rel="stylesheet">
-    
-    <meta property="og:title" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:description" content="" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
-  
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
- 
-    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Placement Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+  <meta name="keywords"
+    content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+  <meta name="author" content="freehtml5.co" />
 
-    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-  
+  <link href="/dist/output.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
-    <link rel="stylesheet" href="{% static 'css/pricing.css' %}">
-  
-  
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  
-   
-    <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
-    
-  
-    <script src="{% static 'js/script.js' %}"></script>
+  <meta property="og:title" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:site_name" content="" />
+  <meta property="og:description" content="" />
+  <meta name="twitter:title" content="" />
+  <meta name="twitter:image" content="" />
+  <meta name="twitter:url" content="" />
+  <meta name="twitter:card" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+  <link rel="stylesheet" href="{% static 'css/pricing.css' %}">
+
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+  <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+
+
+  <script src="{% static 'js/script.js' %}"></script>
+
+
+
+  <style type="text/css">
+    @import url(https://fonts.googleapis.com/css?family=Montserrat:900|Raleway:400,400i,700,700i);
+
+    /*** FONTS ***/
+    /*** VARIABLES ***/
+    /* Colors */
+    /*** EXTEND ***/
+    /* box-shadow */
+    ol.gradient-list>li,
+    ol.gradient-list>li::before {
+      box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
+    }
+
+    /*** STYLE ***/
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #fafafa;
+      color: #1d1f20;
+
+    }
+
+    main {
+      display: block;
+      margin: 0 auto;
+      max-width: 40rem;
+      padding: 1rem;
+    }
+
+    ol.gradient-list {
+      counter-reset: gradient-counter;
+      list-style: none;
+      margin: 1.75rem 0;
+      padding-left: 1rem;
+    }
+
+    ol.gradient-list>li {
+      background: white;
+      border-radius: 0 0.5rem 0.5rem 0.5rem;
+      counter-increment: gradient-counter;
+      margin-top: 1rem;
+      min-height: 3rem;
+      padding: 1rem 1rem 1rem 3rem;
+      position: relative;
+    }
+
+    ol.gradient-list>li::before,
+    ol.gradient-list>li::after {
+      background: linear-gradient(135deg, #83e4e2 0%, #a2ed56 100%);
+      border-radius: 1rem 1rem 0 1rem;
+      content: '';
+      height: 3rem;
+      left: -1rem;
+      overflow: hidden;
+      position: absolute;
+      top: -1rem;
+      width: 3rem;
+    }
+
+    ol.gradient-list>li::before {
+      align-items: flex-end;
+      content: counter(gradient-counter);
+      color: #1d1f20;
+      display: flex;
+      font: 900 1.5em/1 'Montserrat';
+      justify-content: flex-end;
+      padding: 0.125em 0.25em;
+      z-index: 1;
+    }
+  </style>
 </head>
+
 <body>
-    <nav class="fh5co-nav" role="navigation" style="overflow:hidden; background-color:rgb(230 230 230);; position:fixed; top:0; width:100%;">
-        <div class="top">
-            <div class="container">
 
-                <!-- removing top bar -->
-                <!-- <div class="row">
-                <div class="col-xs-12 text-right">
-                    <p class="site">www.yourdomainname.com</p>
-                    <p class="num">Call: +01 123 456 7890</p>
-                    <ul class="fh5co-social">
-                        <li><a href="#"><i class="icon-facebook2"></i></a></li>
-                        <li><a href="#"><i class="icon-twitter2"></i></a></li>
-                        <li><a href="#"><i class="icon-dribbble2"></i></a></li>
-                        <li><a href="#"><i class="icon-github"></i></a></li>
-                    </ul>
-                </div>
-            </div> -->
-            </div>
+  <nav class="fh5co-nav" role="navigation"
+    style="overflow:hidden; background-color:rgb(230 230 230); position:fixed; top:0; width:100%;">
+    <div class="top">
+      <div class="container">
+
+        <!-- removing top bar -->
+        <!-- <div class="row">
+        <div class="col-xs-12 text-right">
+          <p class="site">www.yourdomainname.com</p>
+          <p class="num">Call: +01 123 456 7890</p>
+          <ul class="fh5co-social">
+            <li><a href="#"><i class="icon-facebook2"></i></a></li>
+            <li><a href="#"><i class="icon-twitter2"></i></a></li>
+            <li><a href="#"><i class="icon-dribbble2"></i></a></li>
+            <li><a href="#"><i class="icon-github"></i></a></li>
+          </ul>
         </div>
-        <!-- <header class="header-of-page bg-color" style="top:0px; box-shadow: rgb(220,220,220) 0px 2px 10px;">
-            <div class="header-content">
-                <a href="/?home=1" class="logo">
-                    <i class="iconfont icon_logo"></i>
-                    " &nbsp;Clique "
-                </a>
-                <div class="nav-menu">
-                    <div class="nav_item">
-                        <span>"Home"</span>
-                        </div>
-                    <div class="nav_item">
-                        <span>"About"</span>
-                    </div>
-                    {% if user.is_authenticated %}
-                    <div class="nav_item">
-                        <span>"Courses"</span>
-                    </div>
-                    <div class="nav_item">
-                        <span>"All Trainings"</span>
-                    </div>
-                    <div class="nav_item">
-                        <span>"Placement Records"</span>
-                    </div>
-                    <li>Hello, {{user.first_name}}</li>
-                    <div class="nav_item">
-                        <span>"Logout"</span>
-                    </div>
-                    {% else %}
-                    <div class="nav_item">
-                        <span>
-                            "Login"
-                            <i class="iconfont icon_broad_back">
-                            </i>
-                        </span>
-                        <div class="nav-menu-drop" style="display: none;"></div>
-                    </div>
-                    <div class="nav_item">
-                        <span>"Register"</span>
-                    </div>
-                    {% endif %} -->
-
-
-
-       <div class="top-menu">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-2">
-                        <div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>Educ<span>.</span></a>
-                        </div>
-                    </div>
-                    <div class="col-xs-10 text-right menu-1">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <!-- If blog added -->
-                            <!-- <li class="has-dropdown">
-                            <a href="blog.html">Blog</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Web Design</a></li>
-                                <li><a href="#">eCommerce</a></li>
-                                <li><a href="#">Branding</a></li>
-                                <li><a href="#">API</a></li>
-                            </ul>
-                            </li> -->
-
-                            {% if user.is_authenticated %}
-                            <li><a href="internshipdetails">Internships</a></li>
-                            <li><a href="viewjob">Jobs</a></li>
-                            <li class="active"><a href="placementdetails">Placement Records</a></li>
-                            <li>Hello, {{user.first_name}}</li>
-                            <li><a href="logout">Logout</a> </li>
-                            {% else %}
-                            <li ><a href="accounts/entities"><span>Login</span></a>
-                                
-                            </li>
-                            <li class="btn-cta"><a href="accounts/register"><span>Register</span></a></li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                </div>
-
+      </div> -->
+      </div>
+    </div>
+    <!-- <header class="header-of-page bg-color" style="top:0px; box-shadow: rgb(220,220,220) 0px 2px 10px;">
+      <div class="header-content">
+        <a href="/?home=1" class="logo">
+          <i class="iconfont icon_logo"></i>
+          " &nbsp;Clique "
+        </a>
+        <div class="nav-menu">
+          <div class="nav_item">
+            <span>"Home"</span>
             </div>
-        </div>
-    </nav>
-</head>
-<body style="background-color: #0a0a7e;">
-    <div style="margin-top: 100px; "> 
+          <div class="nav_item">
+            <span>"About"</span>
+          </div>
+          {% if user.is_authenticated %}
+          <div class="nav_item">
+            <span>"Courses"</span>
+          </div>
+          <div class="nav_item">
+            <span>"All Trainings"</span>
+          </div>
+          <div class="nav_item">
+            <span>"Placement Records"</span>
+          </div>
+          <li>Hello, {{user.first_name}}</li>
+          <div class="nav_item">
+            <span>"Logout"</span>
+          </div>
+          {% else %}
+          <div class="nav_item">
+            <span>
+              "Login"
+              <i class="iconfont icon_broad_back">
+              </i>
+            </span>
+            <div class="nav-menu-drop" style="display: none;"></div>
+          </div>
+          <div class="nav_item">
+            <span>"Register"</span>
+          </div>
+          {% endif %} -->
 
-          <h1 style="color: aliceblue; text-align:center">Placement Details</h1> 
-    <div style=" margin: 20px; background-color: rgb(110, 235, 224);"> 
+
+
+    <div class="top-menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2">
+            <div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>Educ<span>.</span></a>
+            </div>
+          </div>
+          <div class="col-xs-10 text-right menu-1">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <!-- If blog added -->
+              <!-- <li class="has-dropdown">
+              <a href="blog.html">Blog</a>
+              <ul class="dropdown">
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">eCommerce</a></li>
+                <li><a href="#">Branding</a></li>
+                <li><a href="#">API</a></li>
+              </ul>
+              </li> -->
+
+              {% if user.is_authenticated %}
+              <li><a href="internshipdetails">Internships</a></li>
+              <li><a href="viewjob">Jobs</a></li>
+              <li class="active"><a href="placementdetails">Placement Records</a></li>
+              <li>Hello, {{user.first_name}}</li>
+              <li><a href="accounts/logout">Logout</a> </li>
+              {% else %}
+              <li><a href="job/tporole">TPO Activity</a></li>
+              <li><a href="job/viewjob">All Jobs</a></li>
+              <li><a href="job/placementdetails">All Placement</a></li>
+
+              <li><a href="accounts/entities"><span>Login</span></a>
+                <!-- <ul class="dropdown">
+                  <li><a href="accounts/login">Student</a></li>
+                  <li><a href="#">TPO</a></li>
+                </ul> -->
+              </li>
+              <li class="btn-cta"><a href="accounts/register"><span>Register</span></a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <div style="margin: 130px;">
+    <a href="description">
+      <ol class="gradient-list">
         {% for n in placement %}
-        <div>
-            <h2> {{n.title}}</h2>
-            <h4> {{n.description}}</h4>
-            <h4>{{n.upload_file}}</h4>
-        </div>
+        <li>{{n.title}} <br> <p>{{n.description}}</p></li>
+        
+
+
         {% endfor %}
-    </div>
-    </div>
-  
+
+      </ol>
+    </a>
+  </div>
+
+
+
 </body>
+
 </html>

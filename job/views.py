@@ -28,8 +28,9 @@ def addjob(request):
         return render(request, 'addjob.html')
 
 
+
 def viewjob(request):
-    addjob = JobForm.objects.all()
+    addjob = JobForm.objects.all().order_by('-id')
     print(addjob)
     data = {
         'addjob' : addjob
@@ -52,14 +53,27 @@ def adddetails(request):
         return render(request, 'add_details.html')
 
 
+
 def placementdetails(request):
-    placement = PlacementDetail.objects.all()
+    placement = PlacementDetail.objects.all().order_by('-id')
     print(placement)
     data = {
         'placement' : placement
     }
 
     return render(request, 'placement_details.html', data)
+    
+
+
+def description(request):
+    placement = PlacementDetail.objects.all()
+    print(placement)
+    data = {
+        'placement' : placement
+    }
+
+    return render(request, 'description.html', data)
+
 
 
 def addinternship(request):
@@ -78,14 +92,17 @@ def addinternship(request):
     else:
         return render(request, 'add_internship.html')
 
+
+
 def internshipdetails(request):
-    internship = InternshipForm.objects.all()
+    internship = InternshipForm.objects.all().order_by('-id')
     print(internship)
     data = {
         'internship' : internship
     }
 
     return render(request, 'internship_details.html', data)
+
 
 
 def logout(request):

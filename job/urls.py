@@ -12,7 +12,6 @@ urlpatterns = [
     path('placementdetails', views.placementdetails,name='placementdetails' ),
     path('addinternship', views.addinternship, name='addinternship'),
     path('internshipdetails', views.internshipdetails, name='internshipdetails'),
-    
-    
+    path('description', views.description, name='description'),
 
 ]

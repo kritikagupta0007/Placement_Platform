@@ -14,7 +14,7 @@
 	<meta name="author" content="freehtml5.co" />
 
 	<link href="/dist/output.css" rel="stylesheet">
-	
+
 	<meta property="og:title" content="" />
 	<meta property="og:image" content="" />
 	<meta property="og:url" content="" />
@@ -71,7 +71,8 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
-		<nav class="fh5co-nav" role="navigation" style="overflow:hidden; background-color:rgb(230 230 230); position:fixed; top:0; width:100%;">
+		<nav class="fh5co-nav" role="navigation"
+			style="overflow:hidden; background-color:rgb(230 230 230); position:fixed; top:0; width:100%;">
 			<div class="top">
 				<div class="container">
 
@@ -133,7 +134,7 @@
 
 
 
-	       <div class="top-menu">
+			<div class="top-menu">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-2">
@@ -155,14 +156,16 @@
 								</li> -->
 
 								{% if user.is_authenticated %}
+								<li><a href="accounts/course">Course</a></li>
+
 								<li><a href="job/internshipdetails">Internships</a></li>
 								<li><a href="job/viewjob">Jobs</a></li>
 								<li><a href="job/placementdetails">Placement Records</a></li>
 								<li>Hello, {{user.first_name}}</li>
 								<li><a href="accounts/logout">Logout</a> </li>
 								{% else %}
-								<li ><a href="accounts/entities"><span>Login</span></a>
-									
+								<li><a href="accounts/entities"><span>Login</span></a>
+
 								</li>
 								<li class="btn-cta"><a href="accounts/register"><span>Register</span></a></li>
 								{% endif %}
@@ -448,10 +451,10 @@
 						<div class="col-md-4 animate-box">
 							<div class="pricing__item">
 								<div class="wrap-price"> -->
-									<!-- <div class="icon icon-user2"></div> -->
-									<!-- <h3 class="pricing__title">Trial</h3> -->
-									<!-- <p class="pricing__sentence">Single user license</p> -->
-								<!-- </div>
+		<!-- <div class="icon icon-user2"></div> -->
+		<!-- <h3 class="pricing__title">Trial</h3> -->
+		<!-- <p class="pricing__sentence">Single user license</p> -->
+		<!-- </div>
 								<div class="pricing__price">
 									<span class="pricing__anim pricing__anim--1">
 										<span class="pricing__currency">$</span>0
@@ -477,10 +480,10 @@
 						<div class="col-md-4 animate-box">
 							<div class="pricing__item">
 								<div class="wrap-price"> -->
-									<!-- <div class="icon icon-store"></div> -->
-									<!-- <h3 class="pricing__title">Silver</h3> -->
-									<!-- <p class="pricing__sentence">Up to 5 users</p> -->
-								<!-- </div>
+		<!-- <div class="icon icon-store"></div> -->
+		<!-- <h3 class="pricing__title">Silver</h3> -->
+		<!-- <p class="pricing__sentence">Up to 5 users</p> -->
+		<!-- </div>
 								<div class="pricing__price">
 									<span class="pricing__anim pricing__anim--1">
 										<span class="pricing__currency">$</span>79
@@ -506,10 +509,10 @@
 						<div class="col-md-4 animate-box">
 							<div class="pricing__item">
 								<div class="wrap-price"> -->
-									<!-- <div class="icon icon-home2"></div> -->
-									<!-- <h3 class="pricing__title">Gold</h3> -->
-									<!-- <p class="pricing__sentence">Unlimited users</p> -->
-								<!-- </div>
+		<!-- <div class="icon icon-home2"></div> -->
+		<!-- <h3 class="pricing__title">Gold</h3> -->
+		<!-- <p class="pricing__sentence">Unlimited users</p> -->
+		<!-- </div>
 								<div class="pricing__price">
 									<span class="pricing__anim pricing__anim--1">
 										<span class="pricing__currency">$</span>499
@@ -547,14 +550,14 @@
 						<div class="simply-countdown simply-countdown-one"></div>
 						<p><strong>Limited Time, Hurry Up!</strong></p>
 						{% if user.is_authenticated %}
-						<p><a href="viewjob" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
+						<p><a href="job/viewjob" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
 						{% else %}
 						<p><a href="accounts/login" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
 						{% endif %}
 					</div>
 				</div>
 			</div>
-		</div> 
+		</div>
 
 
 
