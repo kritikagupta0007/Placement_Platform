@@ -14,11 +14,14 @@ class JobForm(models.Model):
     last_date = models.CharField(max_length=15, default='', editable=True)
     link_to_apply = models.URLField(max_length = 200, default='', editable=True)
 
+    def __str__(self):
+        return self.company
+
 
 class PlacementDetail(models.Model):
     title = models.CharField(max_length=50, default='', editable=True)
     description = models.CharField(max_length=500, default='', editable=True)
-    upload_file = models.FileField(upload_to=None, default= '',max_length=254)
+    upload_file = models.FileField(upload_to=None, default= '',max_length=254) # excel file holding names and details of selected students
 
 
 class InternshipForm(models.Model):
@@ -35,3 +38,5 @@ class Applied(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     job_id = models.ForeignKey(JobForm, on_delete=models.CASCADE)
     resume = models.FileField(upload_to=None, default='' ,max_length=254)
+    is_selected = models.BooleanField(default=False)
+

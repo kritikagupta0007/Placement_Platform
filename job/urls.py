@@ -13,5 +13,8 @@ urlpatterns = [
     path('addinternship', views.addinternship, name='addinternship'),
     path('internshipdetails', views.internshipdetails, name='internshipdetails'),
     path('description', views.description, name='description'),
+    path('applyform/<int:job_id>', views.applyform, name='applyform'),
+    path('apply/<int:job_id>/<int:user_id>', views.apply, name="apply"),
+    path('studentapply', views.studentapply, name='studentapply'),
 
 ]

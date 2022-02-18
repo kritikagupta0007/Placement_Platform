@@ -1,7 +1,9 @@
+from django import views
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.shortcuts import HttpResponse
-from job.models import JobForm, PlacementDetail, InternshipForm
-from django.contrib.auth.models import auth
+from job.models import JobForm, PlacementDetail, InternshipForm, Applied
+from django.contrib.auth.models import User, auth
 
 # Create your views here.
 
@@ -30,13 +32,24 @@ def addjob(request):
 
 
 def viewjob(request):
-    addjob = JobForm.objects.all().order_by('-id')
-    print(addjob)
-    data = {
-        'addjob' : addjob
-    }
-
-    return render(request, 'job.html', data)
+    jobs = JobForm.objects.all().order_by('-id')
+    data = []
+    for job in jobs:
+        applied = list(Applied.objects.filter(job_id=job))
+        data.append(
+            {
+                'id': job.id,
+                'company' : job.company,
+                'profile': job.profile,
+                'package' : job.package,
+                'eligibility' : job.eligibility,
+                'drive_date' : job.drive_date,
+                'last_date' : job.last_date,
+                'applied_count' : len(applied)
+            }
+        )    
+    print(job)
+    return render(request, 'job.html', {'jobs': data})
 
 
 
@@ -108,3 +121,56 @@ def internshipdetails(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+
+def applyform(request, job_id):
+    job_id = job_id
+    return render(request, 'applied.html', {'job_id':job_id})
+
+
+def apply(request, job_id, user_id):
+
+    if request.method == 'POST':
+        job_id = job_id   #job id from url
+        user_id =user_id  #user id from url
+        print(job_id)
+        print(user_id)
+        resume_link = request.POST['resume']
+        job = JobForm.objects.get(id=job_id)
+        user = User.objects.get(id=user_id)
+        if Applied.objects.filter(user_id = user, job_id = job).exists():
+            messages.info(request, 'Already exist')
+            return redirect('viewjob')
+        else:
+            table =  Applied(user_id= user, job_id= job, resume=resume_link)
+            table.save()
+            return redirect('/')
+
+def studentapply(request):
+    student = Applied.objects.all().order_by('-job_id')
+    print(student)
+    data = {
+        'student' : student
+    }
+    return render(request, 'student_applied.html', data)
+
+
+# 2 views1. form _OpenTextWritingModefor submit
+
+# jobs = [
+#     {id=1, profile, companyname, date},
+#     {id=2},
+#     {id=3}
+# ]
+
+# applied = [
+#     {job=1, user=3, resume=""},
+#     {job=1, user=67, resume=""},
+#     {job=2, user=45, resume=""}
+# ]
+
+# applied_data_count = {
+#     1: 2,
+#     2: 1,
+#     3: 0
+# }

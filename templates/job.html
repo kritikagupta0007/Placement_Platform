@@ -217,15 +217,19 @@
 
 
     <div style="margin-top: 130px;">
+        {% for message in messages%}
+		<h4>{{message}}</h4>
+		{% endfor %}
         <!-- <h1 style="text-align: center; color: rgb(8, 8, 8);">Jobs</h1><br> -->
-        {% for n in addjob %}
+        {% for n in jobs %}
         <div class="column">
             <div class="container1">
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <p>
-                            <h2>Company name &nbsp; {{n.company}}</h2>
+                            <h2>Company name &nbsp; {{n.company}}</h2><br><br>
+                            <h3>Total applied count : {{ n.applied_count}}</h3>
                             </p>
                         </div>
                         <div class="flip-card-back">
@@ -234,7 +238,7 @@
                                 Eligibility : {{n.eligibility}}<br>
                                 Drive date : {{n.drive_date}}<br>
                                 Last Date : {{n.last_date}}</p>
-                            <p>Apply Link : <br><a href="{{n.link_to_apply}}">{{n.link_to_apply}}</a></p>
+                            <p>Apply Link : <br><a href="{% url 'applyform' n.id %}">apply</a></p>
                         </div>
                     </div>
                 </div>
