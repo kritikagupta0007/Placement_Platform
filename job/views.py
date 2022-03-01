@@ -2,7 +2,7 @@ from django import views
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.shortcuts import HttpResponse
-from job.models import JobForm, PlacementDetail, InternshipForm, Applied
+from job.models import AppliedIntern, JobForm, PlacementDetail, InternshipForm, Applied
 from django.contrib.auth.models import User, auth
 
 # Create your views here.
@@ -109,12 +109,23 @@ def addinternship(request):
 
 def internshipdetails(request):
     internship = InternshipForm.objects.all().order_by('-id')
-    print(internship)
-    data = {
-        'internship' : internship
-    }
-
-    return render(request, 'internship_details.html', data)
+    data = []
+    for intern in internship:
+        applied = list(AppliedIntern.objects.filter(intern_id=intern))
+        data.append(
+            {
+                'id': intern.id,
+                'company' : intern.company,
+                'profile': intern.profile,
+                'package' : intern.skills,
+                'eligibility' : intern.stipend,
+                'drive_date' : intern.duration,
+                'last_date' : intern.last_date,
+                'applied_count' : len(applied)
+            }
+        )    
+    print(data)
+    return render(request, 'internship_details.html', {'internship' :data})
 
 
 
@@ -139,7 +150,7 @@ def apply(request, job_id, user_id):
         job = JobForm.objects.get(id=job_id)
         user = User.objects.get(id=user_id)
         if Applied.objects.filter(user_id = user, job_id = job).exists():
-            messages.info(request, 'Already exist')
+            messages.info(request, 'You Already Applied for this Job')
             return redirect('viewjob')
         else:
             table =  Applied(user_id= user, job_id= job, resume=resume_link)
@@ -153,6 +164,30 @@ def studentapply(request):
         'student' : student
     }
     return render(request, 'student_applied.html', data)
+
+
+def applyinternform(request, intern_id):
+    intern_id = intern_id
+    return render(request, 'applied_intern.html', {'intern_id':intern_id})
+
+
+def applyintern(request, intern_id, user_id):
+
+    if request.method == 'POST':
+        intern_id = intern_id   #job id from url
+        user_id =user_id  #user id from url
+        print(intern_id)
+        print(user_id)
+        resume_link = request.POST['resume']
+        intern = InternshipForm.objects.get(id=intern_id)
+        user = User.objects.get(id=user_id)
+        if AppliedIntern.objects.filter(user_id = user, intern_id = intern).exists():
+            messages.info(request, 'You Already Applied for this Job')
+            return redirect('internshipdetails')
+        else:
+            table =  AppliedIntern(user_id= user, intern_id= intern, resume=resume_link)
+            table.save()
+            return redirect('/')
 
 
 # 2 views1. form _OpenTextWritingModefor submit

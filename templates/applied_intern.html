@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Apply</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script
+        type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <link href="{% static 'css/register.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="main-w3layouts wrapper">
+        <h1>Upload Your Resume To Applied in the Internship</h1>
+
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="{% url 'applyintern' intern_id user.id %}" method="post">
+                    {% csrf_token %}
+                    <label style="color: rgb(251, 255, 255);font-size: 0.85em;" for="resume">&nbsp;Upload File
+                        &emsp;&emsp;&emsp;</label>
+                    <br><br>
+                    <input type="file" id="resume" name="resume" placeholder="Upload File"
+                        accept="application/pdf,application/vnd.ms-excel" required="" /> <br /><br>
+
+                    <input type="submit" value="Done">
+
+            </div>
+        </div>
+
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- //main -->
+
+</body>
+
+</html>

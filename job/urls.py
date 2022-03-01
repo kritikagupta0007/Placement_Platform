@@ -16,5 +16,7 @@ urlpatterns = [
     path('applyform/<int:job_id>', views.applyform, name='applyform'),
     path('apply/<int:job_id>/<int:user_id>', views.apply, name="apply"),
     path('studentapply', views.studentapply, name='studentapply'),
+    path('applyinternform/<int:intern_id>', views.applyinternform, name='applyinternform'),
+    path('applyintern/<int:intern_id>/<int:user_id>', views.applyintern, name="applyintern"),
 
 ]

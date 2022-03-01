@@ -3,6 +3,7 @@ from django.urls import include, path
 from . import views
 
 urlpatterns = [
-    path('run_alexa', views.run_alexa, name='run_alexa'),
+    path('chat', views.chat, name='chat'),
+    path('run_alexa', views.start_chat, name='run_alexa'),
    
 ]

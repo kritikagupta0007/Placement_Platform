@@ -217,9 +217,11 @@
 
 
     <div style="margin-top: 130px;">
+        <div style="text-align: center;color: rgb(12, 15, 15);">
         {% for message in messages%}
 		<h4>{{message}}</h4>
 		{% endfor %}
+        </div>
         <!-- <h1 style="text-align: center; color: rgb(8, 8, 8);">Jobs</h1><br> -->
         {% for n in jobs %}
         <div class="column">
@@ -238,7 +240,7 @@
                                 Eligibility : {{n.eligibility}}<br>
                                 Drive date : {{n.drive_date}}<br>
                                 Last Date : {{n.last_date}}</p>
-                            <p>Apply Link : <br><a href="{% url 'applyform' n.id %}">apply</a></p>
+                            <button><a href="{% url 'applyform' n.id %}">Apply</a></button>
                         </div>
                     </div>
                 </div>

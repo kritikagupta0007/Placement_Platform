@@ -32,11 +32,21 @@ class InternshipForm(models.Model):
     duration = models.CharField(max_length=15, default='', editable=True)
     last_date = models.CharField(max_length=15, default='', editable=True)
     link_to_apply = models.URLField(max_length = 200, default='', editable=True)
+
+    def __str__(self):
+        return self.company
     
 
 class Applied(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     job_id = models.ForeignKey(JobForm, on_delete=models.CASCADE)
+    resume = models.FileField(upload_to=None, default='' ,max_length=254)
+    is_selected = models.BooleanField(default=False)
+
+
+class AppliedIntern(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    intern_id = models.ForeignKey(InternshipForm, on_delete=models.CASCADE)
     resume = models.FileField(upload_to=None, default='' ,max_length=254)
     is_selected = models.BooleanField(default=False)
 
