@@ -240,7 +240,7 @@
                                 Eligibility : {{n.eligibility}}<br>
                                 Drive date : {{n.drive_date}}<br>
                                 Last Date : {{n.last_date}}</p>
-                            <button><a href="{% url 'applyform' n.id %}">Apply</a></button>
+                            <button><a href="{% url 'check_application_valid' n.id user.id %}">Apply</a></button>
                         </div>
                     </div>
                 </div>

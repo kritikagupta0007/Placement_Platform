@@ -16,8 +16,6 @@ engine.setProperty('voice', voices[1].id)
 def say(text):
     engine.say(text)
     engine.runAndWait()
-    engine.endLoop()
-    engine.stop()
     
 
 def take_command():
@@ -29,6 +27,7 @@ def take_command():
         print('Recoginizing...')
         command = listener.recognize_google(voice)
         command = command.lower()
+        print(command)
         if 'alexa' in command:
             command = command.replace('alexa', '')
             # say(command)
@@ -41,42 +40,42 @@ def take_command():
 def run_alexa():
     command = take_command()
     print(command)
+    message = ""
     #print("Hello")
     if 'Hello' in command:
-        say('Hello how can I help You')
-    if 'help' in command:
-        say('yes,I am here for your help tell me how can I help you')
-    if 'company' in command:
-        say('So many companies came there for the placement may be approx 50 to 60 companies')
-    if 'play' in command:
-        song = command.replace('play', '')
-        say("playing"+ song )
-        pywhatkit.playonyt(song)
+        message = 'Hello how can I help You'
+    elif 'help' in command:
+        message = 'yes,I am here for your help tell me how can I help you'
+    elif 'company' in command:
+        message = 'So many companies came there for the placement may be approx 50 to 60 companies'
     elif 'time' in command:
         time = datetime.datetime.now().strftime('%I:%M %p')
-        say('Current time is' + time)
+        message = 'Current time is' + time
         print(time)
     elif 'are you single' in command:
-        say('i am in relationship with wifi')
+        message = 'i am in relationship with wifi'
     elif 'date' in command:
-        say("I'll go anywhere you take me")
+        message = "I'll go anywhere you take me"
     elif 'beautiful' in command:
-        say('wow thanks. i think you are beautiful too')
+        message = 'wow thanks. i think you are beautiful too'
     elif 'free fire' in command:
-        say('no , i am very busy with my work')
+        message = 'no , i am very busy with my work'
     elif 'joke' in command:
-        say('A ham sandwich walks into a bar and orders a beer, bartender says “sorry, we don’t serve food here.”')
+        message = 'A ham sandwich walks into a bar and orders a beer, bartender says “sorry, we dont serve food here.”'
     else:
-        say('sorry i can not get it. please repeat the command again')
+        message = 'sorry i can not get it. please repeat the command again'
+    return [command, message]
                
 def start_chat(request):
-    # say('Welcome to the placment Smart chat, I am here for your help, Please tell me how can i help you')
     while True:
-        run_alexa()
-        return render(request, 'chat.html')
+        command, message = run_alexa()
+        # chat = Chat
+        # commands.append(command)
+        # messages.append(message)
+        return render(request, 'chat.html', {"command": command, "message": message})
 
 def chat(request):
-    return render(request, 'chat.html')
+    return render(request, 'chat.html', {"command": "Command you enter will appear here...", "message": "Press speak to start chat"})
 
 
 

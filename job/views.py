@@ -189,7 +189,14 @@ def applyintern(request, intern_id, user_id):
             table.save()
             return redirect('/')
 
-
+def check_application_valid(request, job_id, user_id):
+    job = JobForm.objects.get(id=job_id)
+    user = User.objects.get(id=user_id)
+    if Applied.objects.filter(user_id = user, job_id = job).exists():
+        messages.info(request, 'You Already Applied for this Job')
+        return redirect('viewjob')
+    else:
+        return render(request, 'applied.html', {'job_id':job_id})
 # 2 views1. form _OpenTextWritingModefor submit
 
 # jobs = [

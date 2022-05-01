@@ -14,6 +14,7 @@ urlpatterns = [
     path('internshipdetails', views.internshipdetails, name='internshipdetails'),
     path('description', views.description, name='description'),
     path('applyform/<int:job_id>', views.applyform, name='applyform'),
+    path('check_application_valid/<int:job_id>/<int:user_id>', views.check_application_valid, name='check_application_valid'),
     path('apply/<int:job_id>/<int:user_id>', views.apply, name="apply"),
     path('studentapply', views.studentapply, name='studentapply'),
     path('applyinternform/<int:intern_id>', views.applyinternform, name='applyinternform'),
