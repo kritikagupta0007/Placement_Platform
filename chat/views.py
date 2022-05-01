@@ -48,6 +48,14 @@ def run_alexa():
         message = 'yes,I am here for your help tell me how can I help you'
     elif 'company' in command:
         message = 'So many companies came there for the placement may be approx 50 to 60 companies'
+    elif 'apply for internship' in command:
+        message = 'Go To Internship->Choose company->Apply->Upload Resume->Done'
+    elif 'view all records' in command:
+        message = 'Go To Placements records'
+    elif 'view all details' in command:
+        message = 'Go To Placements records'
+    elif 'prepare for placements' in command:
+        message = 'Choose one programming course, learn it and try to solve the coding questions... All the best..!!'
     elif 'time' in command:
         time = datetime.datetime.now().strftime('%I:%M %p')
         message = 'Current time is' + time
